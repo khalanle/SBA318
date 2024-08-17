@@ -3,27 +3,29 @@ const express = require('express');
 const app = express();
 const PORT = 3000;
 
-console.log('i am running');
+const bodyParser = require('body-parser');
 
 // middleware
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json({ extended: true }));
+
 const logReq = function (req, res, next) {
     console.log('Request Received');
     next();
 }
 
-// error handling middleware
+// view engine
+app
+
+
+// error handling 
 app.use((err, req, res, next) => {
     res.status(400).send(err.message);
 })
 
-// route params
-app.get("/", (req, res) => {
-    res.send("Try navigating to /user.");
-});
-
 // routes
 app.get('/', (req, res) => {
-    res.send('this my home route');
+    res.send('this my home route and it is working!!');
 })
 
 // check if server running and listening for requests
