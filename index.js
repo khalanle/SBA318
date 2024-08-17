@@ -24,8 +24,9 @@ app.use((err, req, res, next) => {
 })
 
 // routes
-app.get('/', (req, res) => {
-    res.send('this my home route and it is working!!');
+app.get("/api/cocktails", (req, res) => {
+    //res.send('working route');
+    res.json(cocktails.js)
 })
 
 // check if server running and listening for requests

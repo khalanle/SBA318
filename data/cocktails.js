@@ -72,6 +72,6 @@ const cocktails = [
         ingredients: ["espresso","simple"],
         prep: "shake",
     },
+]
 
-
-];
+module.exports = cocktails;
