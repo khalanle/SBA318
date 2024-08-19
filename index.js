@@ -4,6 +4,7 @@ const app = express();
 const PORT = 3000;
 
 const bodyParser = require('body-parser');
+const cocktails = require();
 
 // middleware
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -15,8 +16,6 @@ const logReq = function (req, res, next) {
 }
 
 // view engine
-app
-
 
 // error handling 
 app.use((err, req, res, next) => {
