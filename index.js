@@ -1,38 +1,29 @@
 // import and install express
 const express = require('express');
+const path = require('path');
 const app = express();
 const PORT = 3000;
 
 const bodyParser = require('body-parser');
-const cocktails = require('./data/cocktails');
 
 // middleware to parse json
-app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
-const logReq = function (req, res, next) {
-    console.log('Request Received');
+// set view engine
+app.set('view engine', 'cocktails');
+
+// data
+const cocktails = require('./data/cocktails.js');
+
+//middleware
+app.use((req, res, next) => {
+    console.log(`${req.method} request for '${req.url}'`);
     next();
-}
-
-// view engine
-app.set("views", "./views");
-app.set("view engine", "cocktails");
-
-
-// error handling 
-app.use((err, req, res, next) => {
-    res.status(400).send(err.message);
 })
 
 // routes
-app.use("/api/cocktails")
 
-
-app.get("/api/cocktails", (req, res) => {
-    //res.send('working route');
-    res.json(cocktails.js)
-})
 
 // check if server running and listening for requests
 app.listen(PORT, () => {
