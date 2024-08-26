@@ -14,6 +14,12 @@
     <h1>
         <%= cocktail.name %>
     </h1>
+    <h3>Liquor:</h3>
+    <p>
+        <li>
+            <%= cocktail.liquor %>
+        </li>
+    </p>
     <h3>Ingredients:</h3>
     <ul>
         <% cocktail.ingredients.forEach(ingredient=> { %>
@@ -26,7 +32,7 @@
     <p>
         <%= cocktail.prep %>
     </p>
-    <a href="/">Search Another Cocktail</a>
+    <a href="/">Go back</a>
 </body>
 
 </html>

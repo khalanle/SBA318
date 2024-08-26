@@ -56,7 +56,7 @@ const cocktails = [
         name: "Sidecar",
         liquor: "cognac",
         ingredients: ["triple sec", "lemon juice"],
-        prep: "In a shaker, add 2 oz of cognac, 0.5 oz of triple sec, and 0.5 oz of lemon juice. Shake well, strain over glass, and emjoy!",
+        prep: "In a shaker, add 2 oz of cognac, 0.5 oz of triple sec, and 0.5 oz of lemon juice. Shake well, strain over glass, and enjoy!",
     },
     {
         id: 9,
