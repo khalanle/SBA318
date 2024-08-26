@@ -4,11 +4,11 @@ const app = express();
 const PORT = 3000;
 
 const bodyParser = require('body-parser');
-const cocktails = require('.');
+const cocktails = require('./data/cocktails');
 
-// middleware
+// middleware to parse json
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json({ extended: true }));
 
 const logReq = function (req, res, next) {
     console.log('Request Received');
