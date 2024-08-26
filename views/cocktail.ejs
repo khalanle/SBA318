@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= cocktail.name %>
+    </title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <h1>
+        <%= cocktail.name %>
+    </h1>
+    <h3>Ingredients:</h3>
+    <ul>
+        <% cocktail.ingredients.forEach(ingredient=> { %>
+            <li>
+                <%= ingredient %>
+            </li>
+            <% }); %>
+    </ul>
+    <h3>Prep:</h3>
+    <p>
+        <%= cocktail.prep %>
+    </p>
+    <a href="/">Search Another Cocktail</a>
+</body>
+
+</html>
